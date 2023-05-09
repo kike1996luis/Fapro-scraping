@@ -4,11 +4,11 @@ jobs:
   test_project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Create .env file
+        uses: ozaytsev86/create-env-file@v1
         with:
-          envkey_SECRET_KEY: '123456abcdef'
-          file_name: .env
-          fail_on_empty: fals
+          SECRET_KEY: '123456abcdef'
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install -r requirements.txt
       - run: python manage.py test .
