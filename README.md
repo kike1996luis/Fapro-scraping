@@ -46,7 +46,7 @@ Este proyecto está desarrollado con Python 3.11.3, Django 3.0.8 y Django REST F
 
 - Se hicieron un total de 11 tests unitarios, el cuál se pueden correr localmente, y también se implementó un proceso CI/CD hook con GitHub actions, el cual tiene como objetivo correr los tests unitarios cada vez que un usuario haga un push o un pull request en el repositorio, esto debido para  procurar siempre que el sistema sea funcional.
 
-![image](https://github.com/kike1996luis/Fapro-scraping/assets/44822982/04facdbf-0c08-4766-b458-0193e340f828)
+![image](https://github.com/kike1996luis/Fapro-scraping/assets/44822982/9e36c20a-f9f1-41a4-97dc-abcebee629f7)
 
 # Instalación
 
