@@ -1,15 +1,22 @@
-name: test_Django
+name: Testing_fapro
 on: [pull_request, push]
 jobs:
   unit_testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11.3
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11.3"
       - name: Create .env file
         run: |
             touch .env
             echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
             cat .env
-      - run: pip install -r requirements.txt
-      - run: python manage.py test
+      - name: Install requirements
+        run: |
+            pip install -r requirements.txt
+      - name: Run Unit Tests
+        run: |
+            python manage.py test

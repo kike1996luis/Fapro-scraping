@@ -9,8 +9,7 @@ from src.services.scrapper import get_uf_value
 class FomentUnitAPI(APIView):
 
     param = openapi.Parameter('date', openapi.IN_QUERY,
-                             description="Fecha para hacer la consulta de unidad de fomento",
-                             type=openapi.FORMAT_DATE,)
+                              description="Fecha para hacer la consulta de unidad de fomento",type=openapi.FORMAT_DATE,)
 
     @swagger_auto_schema(
         operation_description="Endpoint al que se le pasa una fecha y se obtiene el registro de unidad de fomento en la fecha dada",
@@ -21,9 +20,9 @@ class FomentUnitAPI(APIView):
             resp = get_uf_value(self.request.GET.get('date'))
             if resp['success']:
                 return Response(resp, status=status.HTTP_200_OK)
-            
+
             return Response(resp, status=status.HTTP_400_BAD_REQUEST)
-        
+
         return Response(
             {
                 "success": False, 
