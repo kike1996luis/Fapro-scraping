@@ -9,7 +9,7 @@ jobs:
       - name: Create .env file
         run: |
             touch .env
-            echo SECRET_KEY="123456abcdef" >> .env
+            echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
             cat .env
       - run: pip install -r requirements.txt
       - run: python manage.py test
