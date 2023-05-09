@@ -1,0 +1,9 @@
+Django==3.0.8
+djangorestframework==3.11.0
+django-model-utils==4.0.0
+drf-yasg
+requests
+beautifulsoup4
+setuptools
+wheel
+ruamel.yaml.clib==0.2.7
