@@ -5,9 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create .env file
-        uses: ozaytsev86/create-env-file@v1
-        with:
-          ENV_SECRET_KEY: '123456abcdef'
+        run: |
+            touch .env
+            echo SECRET_KEY="123456abcdef" >> .env
+            cat .env
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install -r requirements.txt
